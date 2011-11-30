@@ -1,0 +1,39 @@
+body {
+  font-family:helvetica,arial, sans-serif;
+  background-color:#f8f8f8;
+  font-size:12px;
+  color:#666;
+  margin:0px;
+  padding:0px;
+}
+#header {
+  padding:20px;
+  width:100%;
+}
+
+.tweet {
+  clear:both;
+  width:100%;
+}
+.text {
+  width:80%;
+  padding:20px;
+  padding-bottom:10px;
+}
+
+.date {
+  float:right;
+  height:20px;
+  width:120px;
+  padding:20px;
+  padding-bottom:0px;
+  font-size:10px;
+  text-align:right;
+}
+
+
+.divider {
+  width:100%;
+  background-color:#fff;
+  height:5px;
+}
