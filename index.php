@@ -65,10 +65,24 @@ class Tweets {
         }
     }
     
+    function check_latest() {
+        //read in last-checked and parse as int
+        $last_checked=file_get_contents("last_checked")+0;
+        //older than 5 minutes?  check again
+        if ((time() - $last_checked) > 300){
+            $last_checked = time();
+            file_put_contents("last_checked",$last_checked);
+            $this->get();
+        }
+        
+    }
     function display($date=null){
+        $this->check_latest();
         if (isset($_GET["date"])) {
             $date = $_GET["date"];
         }
+        
+        
         if ($date==null) {
             $date = date("Y-m-d",time());
         }

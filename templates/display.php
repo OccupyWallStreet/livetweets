@@ -26,6 +26,10 @@
             </div>
             
         </div>
+        <div>
+            Tweets refresh every 5 minutes
+            <hr>
+        </div>
         <!--next / prev-->
         <div id="tweets">
             <?php if (isset($tweets) && is_array($tweets) && (count($tweets) >0)):?>
