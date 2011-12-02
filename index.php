@@ -48,9 +48,19 @@ class Tweets {
         foreach ($tweets_by_day as $date=>$tweets) {
             //file name is just today's date, whatever that may be
             $filename = "archive/".$date.".json";
+            //get existing tweets and combine
+            if (file_exists($filename)){
+                $existing_tweets = file_get_contents($filename); 
+                $existing_tweets = json_decode($existing_tweets,true);
+                if (is_array($existing_tweets) && (count($existing_tweets)>1)) {
+                    $tweets = array_merge($existing_tweets,$tweets);
+                    ksort($tweets);
+                }
+            }
+            
             //tweets to text
             $tweets = json_encode($tweets);
-            //rewrite the file
+            //rewrite the file, if it's today, otherwise skip
             file_put_contents($filename,$tweets);
         }
     }
