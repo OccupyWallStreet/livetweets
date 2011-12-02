@@ -17,7 +17,12 @@ class Tweets {
     }
     
     function route(){
-        $func = $_GET["p"];
+        if(isset($_GET["p"])){
+            $func = $_GET["p"];
+        } else {
+            $func = "display";
+        }
+    
         $this->$func();
     }
     
@@ -40,20 +45,24 @@ class Tweets {
     function write($tweets){
         //tweets come in as an array;
         //split the array by day;
+        echo "<pre>";
+
         $tweets_by_day = array();
-        foreach ($tweets as $tweet) {
-            $tweets_by_day[$tweet["date"]][] = $tweet;
+        foreach ($tweets as $id=>$tweet) {
+            $tweets_by_day[$tweet["date"]][$id] = $tweet;
         }
-        
         foreach ($tweets_by_day as $date=>$tweets) {
             //file name is just today's date, whatever that may be
             $filename = "archive/".$date.".json";
             //get existing tweets and combine
+
             if (file_exists($filename)){
                 $existing_tweets = file_get_contents($filename); 
                 $existing_tweets = json_decode($existing_tweets,true);
+                print_r($existing_tweets);
                 if (is_array($existing_tweets) && (count($existing_tweets)>1)) {
-                    $tweets = array_merge($existing_tweets,$tweets);
+                    
+                    $tweets = $existing_tweets + $tweets;
                     ksort($tweets);
                 }
             }
