@@ -45,8 +45,6 @@ class Tweets {
     function write($tweets){
         //tweets come in as an array;
         //split the array by day;
-        echo "<pre>";
-
         $tweets_by_day = array();
         foreach ($tweets as $id=>$tweet) {
             $tweets_by_day[$tweet["date"]][$id] = $tweet;
