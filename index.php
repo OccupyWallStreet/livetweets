@@ -57,7 +57,6 @@ class Tweets {
             if (file_exists($filename)){
                 $existing_tweets = file_get_contents($filename); 
                 $existing_tweets = json_decode($existing_tweets,true);
-                print_r($existing_tweets);
                 if (is_array($existing_tweets) && (count($existing_tweets)>1)) {
                     
                     $tweets = $existing_tweets + $tweets;
