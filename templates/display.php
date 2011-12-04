@@ -56,7 +56,7 @@
        <script type="text/javascript">
        $(document).ready(function(){
            $("#date-chooser").change(function(){
-               var url = "?p=display&date="+$("#date-chooser").val();
+               var url = "/display/"+$("#date-chooser").val();
                window.location.href = url;
            })
        })
