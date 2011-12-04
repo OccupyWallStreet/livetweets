@@ -3,7 +3,7 @@
 class Tweets {
     var $accounts = array();
     var $params = array();
-    
+    var $date = null;
     function __construct(){
         //the twitter accounts to pull 
         $this->accounts = array("libertysqga","libertysqga2","libertysqga3","libertysqga4");
@@ -85,7 +85,7 @@ class Tweets {
     //check latest
     private function check_latest() {
         //only if we're looking at today's tweets.
-        if (!isset($_GET["date"])|| $_GET["date"]==date("Y-m-d",time())){
+        if (($this->date==null ) || ($this->date==date("Y-m-d",time()))){
             //read in last-checked and parse as int
             $last_checked=file_get_contents("last_checked")+0;
             //older than 5 minutes?  check again
@@ -103,10 +103,9 @@ class Tweets {
     }
 
     function display($date=null){
+        $this->date = $date;
         $this->check_latest();
-        if (isset($_GET["date"])) {
-            $date = $_GET["date"];
-        }
+       
         if ($date==null) {
             $date = date("Y-m-d",time());
         }
