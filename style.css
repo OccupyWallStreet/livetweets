@@ -10,7 +10,9 @@ body {
   padding:20px;
   width:100%;
 }
-
+#tweets {
+  padding:20px;
+}
 .tweet {
   clear:both;
   width:100%;

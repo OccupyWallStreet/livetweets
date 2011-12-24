@@ -1,5 +1,6 @@
 <html>
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link rel="stylesheet" href="/style.css" type="text/css" media="screen" title="no title" charset="utf-8" />
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js" type="text/javascript"></script>
     </head>
@@ -24,13 +25,14 @@
                 </form>
                 
             </div>
+        
+            <div>
+                Tweets refresh every 5 minutes
+                <hr>
+            </div>
+            <!--next / prev-->
             
         </div>
-        <div>
-            Tweets refresh every 5 minutes
-            <hr>
-        </div>
-        <!--next / prev-->
         <div id="tweets">
             <?php if (isset($tweets) && is_array($tweets) && (count($tweets) >0)):?>
             <?php foreach ($tweets as $tweet):?>
@@ -50,6 +52,7 @@
             
             <?php endforeach;?>
             <?php else: ?>
+                No tweets yet today.  Check the archives for past tweets.
             <?php endif;?>
         </div>
         

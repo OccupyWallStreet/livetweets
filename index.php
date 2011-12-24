@@ -14,7 +14,7 @@ class Tweets {
         //parse url
         $url = explode("/",$_SERVER["REQUEST_URI"]);
         //"display" is the default function
-        if(isset($url[1])){
+        if(isset($url[1]) && strlen($url[1])>0){
             $func = $url[1];
         } else {
             $func = "display";
@@ -45,7 +45,6 @@ class Tweets {
         } 
         ksort($all_tweets);
         $this->write($all_tweets);
-        
     }
     
     private function write($tweets){
@@ -64,7 +63,6 @@ class Tweets {
                 $existing_tweets = file_get_contents($filename); 
                 $existing_tweets = json_decode($existing_tweets,true);
                 if (is_array($existing_tweets) && (count($existing_tweets)>1)) {
-                    
                     $tweets = $existing_tweets + $tweets;
                     ksort($tweets);
                 }
@@ -97,8 +95,10 @@ class Tweets {
         } 
     }
     
-    function build() {
+    function build($date=null) {
         //re-crawl all of the tweets
+        
+        //get all the tweets
         
     }
 
@@ -109,8 +109,11 @@ class Tweets {
         if ($date==null) {
             $date = date("Y-m-d",time());
         }
-        $tweets = file_get_contents("archive/".$date.".json");
-        $tweets = json_decode($tweets,true);
+        if (file_exists("archive/".$date.".json")) {
+            $tweets = file_get_contents("archive/".$date.".json");
+            $tweets = json_decode($tweets,true);
+        }
+
         $archives = scandir("archive/");
         unset($archives[0]); unset($archives[1]);
         $new = array();
@@ -118,6 +121,7 @@ class Tweets {
             $new[] = array("filename"=>$a,"date"=>str_replace(".json","",$a));
         }
         $archives = array_reverse($new);
+
         include ("templates/display.php");
     }
 }
