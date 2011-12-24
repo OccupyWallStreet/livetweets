@@ -1,11 +1,17 @@
 <html>
     <head>
+        <title>Liberty Square GA Livetweets for <?=date("l, F j, Y",strtotime($date))?> | Occupy.net - Services for Occupy Wall Street</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta content="A Compilation of the livetweets for the Liberty Square General Assembly and NYC Spokes Council" name="description">
         <link rel="stylesheet" href="/style.css" type="text/css" media="screen" title="no title" charset="utf-8" />
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js" type="text/javascript"></script>
     </head>
     <body>
         <div id="header">
+            <div id="occupy-net">
+                <a href="http://occupy.net"><img src="/img/occupy.jpg" alt="occupy.net" /></a>
+            </div>
+            
             <h1>Tweets for <?=date("l, F j, Y",strtotime($date))?></h1>
        <!-- date picker-->
             <div id="menu">
@@ -26,9 +32,9 @@
                 
             </div>
         
-            <div>
-                Tweets refresh every 5 minutes<br/>
-                An explanation of <a href="javascript:void(0)" class="terms-link">terms</a>
+            <div>This is a compilation of the livetweets from the <a target="_new" href="http://twitter.com/LibertySqGA">@libertysqga</a> family of twitter accounts.  Thanks to all of our live-tweeters!
+                Tweets refresh every 5 minutes.<br/>
+                (An explanation of <a href="javascript:void(0)" class="terms-link">terms</a> used by the GA and Spokes)
                 <div id="terms">
                     <h3>Notes</h3>
                     
@@ -40,7 +46,7 @@
                     PoP:    point of process, used when someone is essentially speaking out of turn or not respecting the process.<br/>
                     PoI:    point of information, used when someone has factual information that is directly relevant to the issue at hand and will help people make a decision.<br/>
                     Block:    VERY serious, sometimes misused. Meant to block a proposal because the blocker has very serious moral, ethical, or safety issues directly related to the proposal and is willing to leave the movement if the proposal is consensed upon.<br/>
-                    Stack:    Essentially a list of people who have questions or concerns. Stack is “taken”, questions/concerns are heard, and stack is &lquo;closed&rquo;.<br/>
+                    Stack:    Essentially a list of people who have questions or concerns. Stack is &ldquo;taken&rdquo;, questions/concerns are heard, and stack is &ldquo;closed&rdquo;.<br/>
                     <br/>
                     ppl:    people<br/>
                     SIS:    Shipping, Inventory, and Storage Working Group<br/>
@@ -58,7 +64,11 @@
                     (<i>terms taken courtesy of this <a href="https://docs.google.com/a/nycga.net/document/d/1haAOPMZATboTK9LpA22qkVOb-i5rpJTYq2bRdYCR4VU/edit">document</a></i>)
 
        <!--                 uptwinkles    midtwinkles    downtwinkles    CQ    PoI    PoP    block-->
+        
+            <div class="right">
                 <a href="javascript:void(0)" class="terms-link">[hide]</a>
+            </div>
+            
                 </div>
                 
                 
@@ -79,13 +89,18 @@
                 </div>
             </div>
             
-            <?php //only every 15 mins?>
            
             
             <?php endforeach;?>
             <?php else: ?>
                 No tweets yet today.  Check the archives for past tweets.
             <?php endif;?>
+        </div>
+        <!--next / prev-->
+        
+        <div id="footer">
+        Brought to you by the
+        <a target="_blank" href="http://www.nycga.net/groups/internet">NYC General Assembly Tech Ops group</a>
         </div>
         
        <script type="text/javascript">
@@ -99,6 +114,17 @@
            })
        })
        </script> 
-        <!--next / prev-->
+        <!-- Piwik --> 
+        <script type="text/javascript">
+        var pkBaseURL = (("https:" == document.location.protocol) ? "https://analytics.occupy.net/" : "http://analytics.occupy.net/");
+        document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+        </script><script type="text/javascript">
+        try {
+        var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
+        piwikTracker.trackPageView();
+        piwikTracker.enableLinkTracking();
+        } catch( err ) {}
+        </script><noscript><p><img src="http://analytics.occupy.net/piwik.php?idsite=1" style="border:0" alt="" /></p></noscript>
+        <!-- End Piwik Tracking Code -->
     </body>
 </html>

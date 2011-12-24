@@ -121,8 +121,11 @@ class Tweets {
         foreach ($archives as $a) {
             $new[] = array("filename"=>$a,"date"=>str_replace(".json","",$a));
         }
-        $archives = array_reverse($new);
 
+        $archives = array_reverse($new);
+        if ($archives[0]["filename"]=="empty") {
+            unset($archives[0]);
+        }
         include ("templates/display.php");
     }
     //handles the @, #, http business (needs to recognize t.co)

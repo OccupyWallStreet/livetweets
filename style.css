@@ -1,3 +1,5 @@
+@import "http://fonts.googleapis.com/css?family=Didact+Gothic";
+
 body {
   font-family:helvetica,arial, sans-serif;
   background-color:#f8f8f8;
@@ -8,34 +10,44 @@ body {
   padding:0px;
 }
 a:link {
-  color:#378fce;
+  color:000;
   text-decoration:none;
 }
 
 a:visited {
-  color:#378fce;
+  color:#000;
   text-decoration:none;
 }
 a:hover {
-  color:#378fce;
+  color:#fecc03;
 }
 a:active {
-  color:#378fce;
+  color:#fecc03;
 }
 
 h1 {
+  font-family: 'Didact Gothic',sans-serif;
   font-size:24px;
   line-height:32px;
   font-weight:normal;
   color:#333;
 }
+
+h3 {
+   font-family: 'Didact Gothic',sans-serif;
+}
 #header {
+  background-color:#fff;
   padding:20px;
   width:100%;
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.08);
   -moz-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.08);
   -webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.08);
   
+}
+
+#occupy-net img {
+  width:200px;
 }
 #tweets {
   padding:20px;
@@ -52,7 +64,14 @@ h1 {
   -webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.08);
   
 }
-
+#footer {
+    margin-top:20px;
+    margin-bottom:10px;
+    color: #CCCCCC;
+    font-size: 10px;
+    text-align: center;
+    width: 100%;
+}
 .tweet {
   clear:both;
   width:100%;
@@ -81,8 +100,6 @@ h1 {
 }
 
 
-.divider {
-  width:100%;
-  background-color:#fff;
-  height:5px;
+.right {
+  float:right;
 }
