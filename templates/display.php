@@ -32,9 +32,11 @@
                 
             </div>
         
-            <div>This is a compilation of the livetweets from the <a target="_new" href="http://twitter.com/LibertySqGA">@libertysqga</a> family of twitter accounts.  Thanks to all of our live-tweeters!
-                Tweets refresh every 5 minutes.<br/>
-                (An explanation of <a href="javascript:void(0)" class="terms-link">terms</a> used by the GA and Spokes)
+            <div>
+                <ul>
+                    <li><a href="javascript:void(0)" class="terms-link">Terms</a> used by the GA and Spokes</li>
+                    <li><a href="http://www.nycga.net/<?=date("Y/m/d/",strtotime($date))?>" target="_new">Proposals and minutes</a> from this day</li>
+                </ul>
                 <div id="terms">
                     <h3>Notes</h3>
                     
@@ -105,6 +107,8 @@
             </div>
         </div>
         <div id="footer">
+            This is a compilation of the livetweets from the <a target="_new" href="http://twitter.com/LibertySqGA">@libertysqga</a> family of twitter accounts.  Thanks to all of our live-tweeters!<br/>Tweets refresh every 5 minutes.<br/>
+            
         Brought to you by the
         <a target="_blank" href="http://www.nycga.net/groups/internet">NYC General Assembly Tech Ops group</a>
         </div>
