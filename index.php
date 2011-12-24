@@ -130,10 +130,12 @@ class Tweets {
         //chunk the post for @ and #
         $text = explode(" ",$text);
         foreach ($text as &$t) {
-            if (substr($t,0,1)=="@") {
-                //$x = str_replace("@","",$t);
-                $t = '<a href="http://twitter.com/'.$t.'" target="_new" class="at">'.$t.'</a>';
+            if (substr($t,0,1)=="@"||substr($t,0,2)==".@") {
+                $x = str_replace(array("@",".",",","?","!",'"',"'",":"),"",$t);
+                $t = '<a href="http://twitter.com/'.$x.'" target="_new" class="at">'.$t.'</a>';
             }
+
+
             if (substr($t,0,1)=="#") {
                 $x = str_replace("#","",$t);
                 $t = '<a href="http://twitter.com/#!/search?q=%23'.$x.'" target="_new" class="hash">'.$t.'</a>';
