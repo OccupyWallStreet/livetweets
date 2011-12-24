@@ -12,6 +12,7 @@ class Tweets {
     
     function route(){
         //parse url
+	
         $url = explode("/",$_SERVER["REQUEST_URI"]);
         //"display" is the default function
         if(isset($url[1]) && strlen($url[1])>0){
