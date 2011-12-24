@@ -2,7 +2,7 @@
 
 body {
   font-family:helvetica,arial, sans-serif;
-  background-color:#f8f8f8;
+  background-color:#f0f0f0;
   font-size:12px;
   line-height:16px;
   color:#666;
@@ -19,12 +19,17 @@ a:visited {
   text-decoration:none;
 }
 a:hover {
-  color:#fecc03;
+  color:#fed11a;
 }
 a:active {
-  color:#fecc03;
+  color:#fed11a;
 }
 
+select {
+  font-family: helvetica, arial, sans-serif;
+  color:#333;
+  font-size:10px;
+}
 h1 {
   font-family: 'Didact Gothic',sans-serif;
   font-size:24px;
@@ -99,7 +104,27 @@ h3 {
   text-align:right;
 }
 
-
 .right {
   float:right;
+}
+
+.button {
+  font-size:9px;
+  background-color:#fff;
+  border:2px solid #fed11a;
+  border-radius:5px;
+  margin-top:5px;
+  padding:3px 5px 3px 5px;
+  width:40px;
+}
+.next-prev {
+  display:block;
+  height:20px;
+}
+.prev {
+  float:left;
+}
+.next {
+  float:right;
+  text-align:right;
 }

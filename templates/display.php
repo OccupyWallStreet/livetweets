@@ -95,9 +95,15 @@
             <?php else: ?>
                 No tweets yet today.  Check the archives for past tweets.
             <?php endif;?>
+            <div class="next-prev">
+                <div class="prev button">
+                    &larr; &nbsp;<a href="/display/<?=date("Y-m-d",strtotime ($date)-(24*3600))?>">Prev</a>
+                </div>
+                <div class="next button">
+                    <a href="/display/<?=date("Y-m-d",strtotime($date)+(24*3600));?>">Next</a>&nbsp; &rarr;
+                </div>
+            </div>
         </div>
-        <!--next / prev-->
-        
         <div id="footer">
         Brought to you by the
         <a target="_blank" href="http://www.nycga.net/groups/internet">NYC General Assembly Tech Ops group</a>

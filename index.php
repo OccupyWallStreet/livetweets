@@ -34,7 +34,7 @@ class Tweets {
     }
     
     
-    function get(){
+    private function get(){
         //https://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=libertysqga&count=20
         $all_tweets = array();
         foreach ($this->accounts as $account){
