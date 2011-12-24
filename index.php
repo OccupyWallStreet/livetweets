@@ -124,6 +124,30 @@ class Tweets {
 
         include ("templates/display.php");
     }
+    //handles the @, #, http business (needs to recognize t.co)
+    function format_tweet($text){
+        //chunk the post for @ and #
+        $text = explode(" ",$text);
+        foreach ($text as &$t) {
+            if (substr($t,0,1)=="@") {
+                //$x = str_replace("@","",$t);
+                $t = '<a href="http://twitter.com/'.$t.'" target="_new" class="at">'.$t.'</a>';
+            }
+            if (substr($t,0,1)=="#") {
+                $x = str_replace("#","",$t);
+                $t = '<a href="http://twitter.com/#!/search?q=%23'.$x.'" target="_new" class="hash">'.$t.'</a>';
+            }
+             if (substr($t,0,7)=="http://") {
+                    $t = '<a href="'.$t.'" target="_new" class="link">'.$t.'</a>';
+            }
+            
+             if (substr($t,0,4)=="t.co") {
+                    $t = '<a href="http://'.$t.'" target="_new" class="link">'.$t.'</a>';
+            }
+        }
+        $text = implode(" ",$text);
+        return $text;
+    }
 }
 
 $t = new Tweets();

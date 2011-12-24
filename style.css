@@ -2,20 +2,67 @@ body {
   font-family:helvetica,arial, sans-serif;
   background-color:#f8f8f8;
   font-size:12px;
+  line-height:16px;
   color:#666;
   margin:0px;
   padding:0px;
 }
+a:link {
+  color:#378fce;
+  text-decoration:none;
+}
+
+a:visited {
+  color:#378fce;
+  text-decoration:none;
+}
+a:hover {
+  color:#378fce;
+}
+a:active {
+  color:#378fce;
+}
+
+h1 {
+  font-size:24px;
+  line-height:32px;
+  font-weight:normal;
+  color:#333;
+}
 #header {
   padding:20px;
   width:100%;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.08);
+  -webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.08);
+  
 }
 #tweets {
   padding:20px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.08);
+  -webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.08);
+
 }
+#terms {
+  display:none;
+  padding:10px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.08);
+  -webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.08);
+  
+}
+
 .tweet {
   clear:both;
   width:100%;
+  margin-bottom:5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px;
+	-khtml-radius: 5px;
+	border-radius: 5px;
+  background-color:#fff;
+  
 }
 .text {
   width:80%;
