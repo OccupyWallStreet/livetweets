@@ -73,9 +73,9 @@ class Tweets {
             $tweets = json_encode($tweets);
             //rewrite the file, if it's today, otherwise skip
             //previous archives don't get touched
-            if (strpos($filename, date("Y-m-d",time())) !== false){
+           // if (strpos($filename, date("Y-m-d",time())) !== false){
                 file_put_contents($filename,$tweets); 
-            }
+            //}
         }
     }
     //function to rebuild all archives
@@ -96,9 +96,29 @@ class Tweets {
         } 
     }
     
-    function build($date=null) {
-        //re-crawl all of the tweets
+    function build($pass) {
         
+        //re-crawl all of the tweets
+        if ($pass !="tw33tzd33tz") {
+            echo "...";
+            exit();
+        }
+        //https://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=libertysqga&count=20
+        $all_tweets = array();
+        foreach ($this->accounts as $account){
+            $page = 0;
+            while ($page < 16){
+                 $tweets = file_get_contents("https://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=".$account."&count=200&include_rts=1&page=".$page);         
+                $tweets = json_decode($tweets,true);
+                foreach ($tweets as $t) {
+                    $all_tweets[$t["id_str"]] = array("time"=>date("Y-m-d H:i:s" ,strtotime($t["created_at"])),"date"=>date("Y-m-d",strtotime($t["created_at"])),"text"=>$t["text"]);
+                
+                }
+                $page++;
+            }
+        } 
+        ksort($all_tweets);
+        $this->write($all_tweets);
         //get all the tweets
         
     }
