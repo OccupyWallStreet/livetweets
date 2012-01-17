@@ -80,8 +80,8 @@
         </div>
         <div id="tweets">
             <?php if (isset($tweets) && is_array($tweets) && (count($tweets) >0)):?>
-            <?php foreach ($tweets as $tweet):?>
-            <div class="tweet">
+            <?php foreach ($tweets as $i => $tweet):?>
+            <div id="tweet_<?=$i?>" class="tweet">
                 <?php //only every 15 mins?>
                 <div class="date">
                     <?=date("H:i a",strtotime($tweet["time"]))?><br/>
