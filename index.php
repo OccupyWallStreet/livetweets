@@ -123,6 +123,23 @@ class Tweets {
         
     }
 
+    function rss() {
+      
+      $archives = array_reverse(scandir("archive/"));
+      unset($archives[0]);
+      $archives = array_slice($archives,0,50);
+      $tweets = array();
+      foreach ($archives as $archive) {
+        if (file_exists("archive/".$archive)) {
+          $tweet = file_get_contents("archive/".$archive);
+          $tweets[$archive]["date"] = str_replace(".json","",$archive);
+          $tweets[$archive]["content"] = json_decode($tweet,true);
+        }
+      }
+      header("Content-type: text/xml");
+      include ("templates/rss.php");
+    }
+
     function display($date=null){
         $this->date = $date;
         $this->check_latest();

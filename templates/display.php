@@ -36,6 +36,7 @@
                 <ul>
                     <li><a href="javascript:void(0)" class="terms-link">Terms</a> used by the GA and Spokes</li>
                     <li><a href="http://www.nycga.net/<?=date("Y/m/d/",strtotime($date))?>" target="_new">Proposals and minutes</a> from this day</li>
+                    <li><a href="http://livetweets.occupy.net/rss/">RSS</a> feed of livetweets</li>
                 </ul>
                 <div id="terms">
                     <h3>Notes</h3>
