@@ -6,7 +6,7 @@ class Tweets {
     var $date = null;
     function __construct(){
         //the twitter accounts to pull 
-        $this->accounts = array("libertysqga","libertysqga2","libertysqga3","libertysqga4");
+        $this->accounts = array("OWSPA","libertysqga","libertysqga2","libertysqga3","libertysqga4");
         $this->route();
     }
     
